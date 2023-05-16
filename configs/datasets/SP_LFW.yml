@@ -1,0 +1,57 @@
+dataset:
+  name: SP_LFW
+  split_names: [train, test]
+  num_classes: 2
+  pre_size: 112
+  image_size: 256
+  num_workers: '@{num_workers}'
+  num_gpus: '@{num_gpus}'
+  num_machines: '@{num_machines}'
+  mode: SP
+  train:
+    dataset_class: ImglistDataset_SP
+    data_dir: 
+    imglist_pth: ./data/SP_new3/LFW_train.labels.txt
+    batch_size: 32
+    shuffle: True
+    interpolation: bilinear
+
+  test:
+    dataset_class: ImglistDataset
+    batch_size: 32
+    shuffle: False
+    interpolation: bilinear
+
+    set_names: [Real, Gradient-advs]
+    Real:
+      data_dir: 
+      imglist_pth: ./data/SP_new3/LFW_test.labels.txt
+    Gradient-advs:
+      subsets: [fgsm, bim, pgd, rfgsm, difgsm, mifgsm, tifgsm, tipim]
+      fgsm:
+        data_dir: 
+        imglist_pth: ./data/SP_new3/LFW-FGSM-eps5_test.labels.txt
+      bim:
+        data_dir: 
+        imglist_pth: ./data/SP_new3/LFW-BIM-eps5_test.labels.txt
+      pgd:
+        data_dir: 
+        imglist_pth: ./data/SP_new3/LFW-PGD-eps5_test.labels.txt
+      rfgsm:
+        data_dir: 
+        imglist_pth: ./data/SP_new3/LFW-RFGSM-eps5_test.labels.txt
+      difgsm:
+        data_dir: 
+        imglist_pth: ./data/SP_new3/LFW-DIFGSM-eps5_test.labels.txt
+      mifgsm:
+        data_dir: 
+        imglist_pth: ./data/SP_new3/LFW-MIFGSM-eps5_test.labels.txt
+      tifgsm:
+        data_dir: 
+        imglist_pth: ./data/SP_new3/LFW-TIFGSM-eps5_test.labels.txt
+      tipim:
+        data_dir: 
+        imglist_pth: ./data/SP_new3/LFW-TIPIM-eps5_test.labels.txt
+
+
+

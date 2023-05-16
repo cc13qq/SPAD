@@ -1,0 +1,35 @@
+dataset:
+  name: GC_CA
+  split_names: [train, test]
+  num_classes: 2
+  pre_size: 256
+  image_size: 256
+  num_workers: '@{num_workers}'
+  num_gpus: '@{num_gpus}'
+  num_machines: '@{num_machines}'
+  mode: GC
+  train:
+    dataset_class: ImglistDataset_SP
+    data_dir: 
+    imglist_pth: ./data/SP_new3/celebahq_train.labels.txt
+    batch_size: 32
+    shuffle: True
+    interpolation: bilinear
+    
+  test:
+    dataset_class: ImglistDataset
+    batch_size: 32
+    shuffle: False
+    interpolation: bilinear
+    set_names: [Real, GAN-advs]
+    Real:
+      data_dir: 
+      imglist_pth: ./data/SP_new3/celebahq_test_1.labels.txt
+    GAN-advs:
+      subsets: [advmakeup, amtgan]
+      advmakeup:
+        data_dir: 
+        imglist_pth: ./data/SP_new3/advmakeup_test.labels.txt
+      amtgan:
+        data_dir: 
+        imglist_pth: ./data/SP_new3/amtgan_test.labels.txt

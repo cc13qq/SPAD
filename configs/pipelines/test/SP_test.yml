@@ -1,0 +1,47 @@
+exp_name: "'@{pipeline.name}'_'@{network.name}'_th'@{evaluator.th_p}'_epoch'@{epoch}'_'@{mark}'"
+output_dir: ./results/
+save_output: True
+force_merge: True # disabled if 'save_output' is False
+num_classes: '@{dataset.num_classes}'
+mark: SP # to mark the version of experiment
+
+num_gpus: 1
+num_workers: 8
+num_machines: 1
+machine_rank: 0
+epoch: 1
+
+seed: 3407
+
+pipeline:
+  name: SP_test
+
+evaluator:
+  name: SP
+  mode: weight
+  recall: 0.99
+  score_set: all
+  th_p: 0.9
+  th_all:
+
+recorder:
+  name: SP
+  save_scores: True
+  save_csv: True
+
+preprocessor:
+  name: base
+
+postprocessor:
+  name: SP
+  mode: energy
+  postprocessor_args:
+    temperature: 1
+
+network:
+  name: X_sep
+  num_classes: '@{dataset.num_classes}'
+  pretrained: True          # set 'True' to load pretrained model
+  checkpoint: ''
+  num_gpus: '@{num_gpus}'
+

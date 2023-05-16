@@ -1,0 +1,18 @@
+network:
+  name: xception_net_sep
+  num_classes: '@{dataset.num_classes}'
+  pretrained: False          # set 'True' to load pretrained model
+  checkpoint: ./results/cifar10_double_label_resnet18_32x32_mos_e100_lr0.003/best.ckpt            # ignore if pretrained is false
+  num_gpus: '@{num_gpus}'
+weight_energy:
+  name: weight_energy
+  num_classes: '@{dataset.num_classes}'
+  pretrained: False          # set 'True' to load pretrained model
+  checkpoint:           # ignore if pretrained is false
+  num_gpus: '@{num_gpus}'
+logistic_regression:
+  name: weight_energy
+  num_classes: '@{dataset.num_classes}'
+  pretrained: False          # set 'True' to load pretrained model
+  checkpoint:             # ignore if pretrained is false
+  num_gpus: '@{num_gpus}'
