@@ -24,6 +24,7 @@ sh SP_test.sh
 ```
 ## Dependencies:
 python 3.8.8, PyTorch = 1.10.0, cudatoolkit = 11.7, torchvision, tqdm, scikit-learn, mmcv, numpy, opencv-python, dlib, Pillow
+'''
 
 ### 3. Datasets:
 
