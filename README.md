@@ -37,6 +37,7 @@ We provide some checkpoints for you to test. You can download them [here](https:
 ### Citation
 
 If you find our repository useful for your research, please consider citing our paper:
+```
 @inproceedings{ijcai2023p165,
   title     = {Detecting Adversarial Faces Using Only Real Face Self-Perturbations},
   author    = {Wang, Qian and Xian, Yongqin and Ling, Hefei and Zhang, Jinyuan and Lin, Xiaorui and Li, Ping and Chen, Jiazhong and Yu, Ning},
@@ -51,3 +52,4 @@ If you find our repository useful for your research, please consider citing our 
   doi       = {10.24963/ijcai.2023/165},
   url       = {https://doi.org/10.24963/ijcai.2023/165},
 }
+```
