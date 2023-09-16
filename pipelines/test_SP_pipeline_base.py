@@ -36,6 +36,6 @@ class Test_SP_Pipeline_base:
         print('Start testing...', flush=True)
 
         test_metrics = evaluator.eval_acc_SP(self.nets, self.test_loader, postprocessor, -1, -1)
-        recorder.report(test_metrics)
+        recorder.report(None, test_metrics)
 
         print('Completed!', flush=True)
