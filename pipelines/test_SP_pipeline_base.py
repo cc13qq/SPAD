@@ -18,7 +18,7 @@ class Test_SP_Pipeline_base:
     def __init__(self, config: Config):
         self.config = config
         self.loader_dict = get_dataloader_SP(self.config)
-        self.val_loader, self.test_loader = self.loader_dict['val'], self.loader_dict['test']
+        self.test_loader = self.loader_dict['test']
         
         self.net = get_network(self.config.network)
 
