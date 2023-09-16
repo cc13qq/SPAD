@@ -25,24 +25,24 @@ class SPRecorder:
                     train_metrics['epoch_idx'], train_metrics['batch_idx'], int(time.time() - self.begin_time), train_metrics['loss']), flush=True)
 
         if val_metrics is not None:
-            print('Val AvgLoss {:.4f} | Val AvgAcc {:.4f} | Val AvgAUC {:.4f}'.format(
+            print('Val AvgLoss {:.4f} | Val AvgAcc@0.5 {:.4f} | Val AvgAUC {:.4f}'.format(
                 val_metrics['loss'], val_metrics['acc'], val_metrics['auc']), flush=True)
 
             for set in val_metrics:
                 if set in ['loss', 'acc', 'auc', 'epoch_idx', 'batch_idx']:
                     continue
                 if set == 'Real':
-                    print('\t Val metrics on set '+ set + ': Loss {:.4f} | Acc {:.4f}'.format(
+                    print('\t Val metrics on set '+ set + ': Loss {:.4f} | Acc@0.5 {:.4f}'.format(
                         val_metrics[set]['loss'], val_metrics[set]['acc']), flush=True)
                     continue
                 else:
-                    print('\t Val metrics on set '+ set + ': AvgLoss {:.4f} | AvgAcc {:.4f} | AvgAUC {:.4f}'.format(
+                    print('\t Val metrics on set '+ set + ': AvgLoss {:.4f} | AvgAcc@0.5 {:.4f} | AvgAUC {:.4f}'.format(
                         val_metrics[set]['loss'], val_metrics[set]['acc'], val_metrics[set]['auc']), flush=True)
 
                     for subset in val_metrics[set]:
                         if subset in ['loss', 'acc', 'auc']:
                             continue
-                        print('\t \t Val metrics on subset '+ subset + ': Loss {:.4f} | Acc {:.4f} | AUC {:.4f}'.format(
+                        print('\t \t Val metrics on subset '+ subset + ': Loss {:.4f} | Acc@0.5 {:.4f} | AUC {:.4f}'.format(
                             val_metrics[set][subset]['loss'], val_metrics[set][subset]['acc'], val_metrics[set][subset]['auc']), flush=True)
 
     def save_model(self, nets, val_metrics):
