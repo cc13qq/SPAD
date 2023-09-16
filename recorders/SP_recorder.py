@@ -12,7 +12,7 @@ class SPRecorder:
         self.begin_time = time.time()
         self.output_dir = config.output_dir
 
-    def report(self, train_metrics, val_metrics):
+    def report(self, train_metrics, val_metrics=None):
         # train_metrics: ['loss', 'epoch_idx']
         '''
         val/test metrics:   dict[metrics_set, loss, acc, auc, epoch_idx, batch_idx]
