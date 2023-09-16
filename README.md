@@ -44,7 +44,7 @@ python main.py --config configs/datasets/SP_celebahq.yml configs/pipelines/test/
 ```
 To Test GAN-based adv-faces on CelebA-HQ, run:
 ```
-python main.py --config configs/datasets/SP_GC.yml configs/pipelines/test/SP_test.yml --network.name X_sep --network.checkpoint 'results/checkpoints/net-best_GC.ckpt'
+python main.py --config configs/datasets/GC_CA.yml configs/pipelines/test/SP_test.yml --network.name X_sep --network.checkpoint 'results/checkpoints/net-best_GC.ckpt'
 ```
 
 ### Citation
