@@ -35,11 +35,17 @@ LFW and Celeba-HQ datasets we used in this program are [here](https://pan.baidu.
 We provide some checkpoints for you to test. You can download them [here](https://pan.baidu.com/s/1cDnb8CFzihI3dbvUsheq2g?pwd=jmao). You can put them into the folder './results/checkpoints'.
 
 To Test gradient-based adv-faces on LFW, run:
+'''
 python main.py --config configs/datasets/SP_LFW.yml configs/pipelines/test/SP_test.yml --network.name X --network.checkpoint 'results/checkpoints/net-best_LFW.ckpt'
+'''
 To Test gradient-based adv-faces on CelebA-HQ, run:
+'''
 python main.py --config configs/datasets/SP_celebahq.yml configs/pipelines/test/SP_test.yml --network.name X --network.checkpoint 'results/checkpoints/net-best_celebahq.ckpt'
+'''
 To Test GAN-based adv-faces on CelebA-HQ, run:
+'''
 python main.py --config configs/datasets/SP_GC.yml configs/pipelines/test/SP_test.yml --network.name X_sep --network.checkpoint 'results/checkpoints/net-best_GC.ckpt'
+'''
 
 ### Citation
 
